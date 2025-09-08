@@ -51,7 +51,8 @@ const SignIn = () => {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="p-3 bg-gradient-primary rounded-xl shadow-elegant">
-              <Shield className="w-8 h-8 text-primary-foreground" />
+              {/* Shield icon fix: force visible color */}
+              <Shield className="w-8 h-8 text-white" />
             </div>
           </div>
           <h1 className="text-3xl font-bold text-foreground">CloudGuardian</h1>
@@ -100,9 +101,11 @@ const SignIn = () => {
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? (
-                      <EyeOff className="w-4 h-4" />
+                      // EyeOff fix
+                      <EyeOff className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                     ) : (
-                      <Eye className="w-4 h-4" />
+                      // Eye fix
+                      <Eye className="w-4 h-4 text-gray-600 dark:text-gray-300" />
                     )}
                   </Button>
                 </div>
@@ -110,11 +113,12 @@ const SignIn = () => {
 
               <Button 
                 type="submit" 
-                className="w-full h-12 bg-gradient-primary shadow-elegant hover:shadow-lg transition-all duration-200"
+                className="w-full h-12 bg-[#0B0B60] text-white font-semibold rounded-lg shadow-md hover:bg-[#14146d] transition-all duration-200 flex items-center justify-center gap-2"
                 disabled={isLoading}
               >
                 {isLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                  // Loader fix
+                  <Loader2 className="w-4 h-4 animate-spin mr-2 text-white" />
                 ) : null}
                 Sign In
               </Button>
