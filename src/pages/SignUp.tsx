@@ -58,6 +58,7 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
       <div className="w-full max-w-md">
+        {/* Branding */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="p-3 bg-gradient-primary rounded-xl shadow-elegant">
@@ -68,18 +69,23 @@ const SignUp = () => {
           <p className="text-muted-foreground mt-2">Secure your digital infrastructure</p>
         </div>
 
+        {/* Sign Up Card */}
         <Card className="shadow-elegant border-0 bg-card/50 backdrop-blur-sm">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl flex items-center justify-center gap-2">
-              <UserPlus className="w-6 h-6" />
+            <CardTitle className="text-2xl flex items-center justify-center gap-3">
+              <div className="p-2 bg-primary/10 rounded-full">
+                <UserPlus className="w-8 h-8 text-primary" />
+              </div>
               Create Account
             </CardTitle>
             <CardDescription>
               Join CloudGuardian to protect your infrastructure
             </CardDescription>
           </CardHeader>
+
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Full Name */}
               <div className="space-y-2">
                 <Label htmlFor="name">Full Name</Label>
                 <Input
@@ -93,6 +99,7 @@ const SignUp = () => {
                 />
               </div>
 
+              {/* Email */}
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -106,6 +113,7 @@ const SignUp = () => {
                 />
               </div>
               
+              {/* Password */}
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <div className="relative">
@@ -137,18 +145,18 @@ const SignUp = () => {
                 </p>
               </div>
 
+              {/* Submit Button */}
               <Button 
                 type="submit" 
-                className="w-full h-12 bg-gradient-primary shadow-elegant hover:shadow-lg transition-all duration-200"
+                className="w-full h-12 bg-[#0B0B60] text-white font-semibold rounded-lg shadow-md hover:bg-[#14146d] transition-all duration-200 flex items-center justify-center gap-2"
                 disabled={isLoading}
               >
-                {isLoading ? (
-                  <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                ) : null}
+                {isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
                 Create Account
               </Button>
             </form>
 
+            {/* Sign In Link */}
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground">
                 Already have an account?{" "}
